@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page {
+    @apply bg-gray-100;
+}
+
+.input {
+    @apply border border-gray-300 rounded-lg p-4 bg-white text-base;
+    placeholder-color: #9CA3AF;
+}
+
+.btn-primary {
+    @apply bg-blue-600 text-white font-semibold py-4 rounded-lg;
+}
+
+.btn-primary:active {
+    @apply bg-blue-700;
+}
+
+.btn-secondary {
+    @apply bg-gray-100 text-blue-600 font-semibold py-4 rounded-lg border border-blue-600;
+}
+
+.btn-secondary:active {
+    @apply bg-gray-200;
+}
+
+.btn-text {
+    @apply text-blue-600 font-medium py-2;
+}
+
+.form-container {
+    @apply p-6 bg-white m-4 rounded-xl shadow-sm;
+}
+
+.hr {
+    @apply bg-gray-300 h-px;
+}

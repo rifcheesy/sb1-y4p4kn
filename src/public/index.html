@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js API Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Node.js API Dashboard</h1>
+            <p>A modern Node.js REST API</p>
+        </header>
+
+        <main>
+            <!-- API Status -->
+            <section class="card">
+                <h2>API Status</h2>
+                <div class="status-container">
+                    <button onclick="checkHealth()" class="btn primary">Check Status</button>
+                    <pre id="health-result" class="result-box"></pre>
+                </div>
+            </section>
+
+            <!-- User Operations -->
+            <section class="card">
+                <h2>User Operations</h2>
+                
+                <!-- Register -->
+                <div class="operation">
+                    <h3>Register</h3>
+                    <form id="register-form" onsubmit="handleRegister(event)">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <button type="submit" class="btn primary">Register</button>
+                    </form>
+                    <pre id="register-result" class="result-box"></pre>
+                </div>
+
+                <!-- Login -->
+                <div class="operation">
+                    <h3>Login</h3>
+                    <form id="login-form" onsubmit="handleLogin(event)">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <button type="submit" class="btn primary">Login</button>
+                    </form>
+                    <pre id="login-result" class="result-box"></pre>
+                </div>
+            </section>
+
+            <!-- Task Operations -->
+            <section class="card">
+                <h2>Task Operations</h2>
+                
+                <!-- Create Task -->
+                <div class="operation">
+                    <h3>Create Task</h3>
+                    <form id="task-form" onsubmit="handleCreateTask(event)">
+                        <input type="text" name="title" placeholder="Task Title" required>
+                        <textarea name="description" placeholder="Task Description"></textarea>
+                        <input type="datetime-local" name="dueDate">
+                        <button type="submit" class="btn primary">Create Task</button>
+                    </form>
+                    <pre id="task-result" class="result-box"></pre>
+                </div>
+
+                <!-- Task List -->
+                <div class="operation">
+                    <h3>Tasks</h3>
+                    <button onclick="loadTasks()" class="btn secondary">Load Tasks</button>
+                    <div id="tasks-list" class="tasks-container"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>

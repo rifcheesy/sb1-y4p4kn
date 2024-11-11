@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+      navigatingTo="onNavigatingTo" 
+      class="page">
+    <ActionBar title="Garage Door AI" class="bg-blue-600 text-white" />
+    
+    <ScrollView>
+        <StackLayout class="form-container">
+            <Image src="~/images/logo.png" 
+                   width="120" 
+                   height="120" 
+                   class="mx-auto mb-4" />
+            
+            <Label text="Welcome Back" 
+                   class="text-2xl font-bold text-center mb-6" />
+            
+            <StackLayout class="space-y-4">
+                <TextField hint="Email" 
+                          text="{{ email }}" 
+                          keyboardType="email" 
+                          autocorrect="false" 
+                          autocapitalizationType="none" 
+                          class="input" />
+                
+                <TextField hint="Password" 
+                          text="{{ password }}" 
+                          secure="true" 
+                          class="input" />
+                
+                <Label text="{{ errorMessage }}" 
+                       class="text-red-500 text-center" 
+                       visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" />
+                
+                <Button text="{{ isLoading ? 'Logging in...' : 'Login' }}" 
+                        tap="{{ onLoginTap }}" 
+                        isEnabled="{{ !isLoading }}"
+                        class="btn-primary" />
+                
+                <Button text="Forgot Password?" 
+                        tap="{{ onForgotPassword }}" 
+                        class="btn-text" />
+            </StackLayout>
+            
+            <GridLayout rows="auto" columns="*, auto, *" class="mt-6">
+                <StackLayout col="0" class="hr" />
+                <Label col="1" text="OR" class="text-gray-500 mx-4" />
+                <StackLayout col="2" class="hr" />
+            </GridLayout>
+            
+            <Button text="Create New Account" 
+                    tap="{{ onRegister }}" 
+                    class="btn-secondary mt-6" />
+        </StackLayout>
+    </ScrollView>
+</Page>

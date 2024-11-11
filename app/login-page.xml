@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="Garage Door AI" />
+    
+    <StackLayout class="form-container">
+        <Label text="Login" class="text-2xl font-bold text-center m-4" />
+        
+        <TextField hint="Email" 
+                  text="{{ email }}" 
+                  keyboardType="email" 
+                  autocorrect="false" 
+                  autocapitalizationType="none" 
+                  class="input" />
+        
+        <TextField hint="Password" 
+                  text="{{ password }}" 
+                  secure="true" 
+                  class="input" />
+        
+        <Label text="{{ errorMessage }}" 
+               class="text-red-500 text-center" 
+               visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" />
+        
+        <Button text="{{ isLoading ? 'Logging in...' : 'Login' }}" 
+                tap="{{ onLoginTap }}" 
+                isEnabled="{{ !isLoading }}"
+                class="btn-primary" />
+    </StackLayout>
+</Page>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Schedule Service" class="bg-blue-600 text-white">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Schedule a Service Visit" class="text-2xl font-bold mb-4" />
+            
+            <!-- Date Selection -->
+            <Label text="Preferred Date" class="font-semibold mb-2" />
+            <DatePicker date="{{ selectedDate }}" class="mb-4" />
+            
+            <!-- Time Selection -->
+            <Label text="Preferred Time" class="font-semibold mb-2" />
+            <TimePicker time="{{ selectedTime }}" class="mb-4" />
+            
+            <!-- Issue Description -->
+            <Label text="Describe the Issue" class="font-semibold mb-2" />
+            <TextView hint="Enter details about your garage door issue" 
+                text="{{ issueDescription }}" 
+                height="100" 
+                class="border rounded p-2 mb-4" />
+            
+            <!-- Contact Information -->
+            <Label text="Contact Information" class="text-xl font-bold mt-4 mb-2" />
+            <TextField hint="Full Name" text="{{ name }}" class="mb-2 p-2 border rounded" />
+            <TextField hint="Phone Number" text="{{ phone }}" 
+                keyboardType="phone" class="mb-2 p-2 border rounded" />
+            <TextField hint="Email" text="{{ email }}" 
+                keyboardType="email" class="mb-2 p-2 border rounded" />
+            <TextField hint="Address" text="{{ address }}" class="mb-4 p-2 border rounded" />
+            
+            <!-- Submit Button -->
+            <Button text="Schedule Service" tap="{{ onScheduleSubmit }}" 
+                class="bg-blue-500 text-white p-4" isEnabled="{{ !isSubmitting }}" />
+            
+            <ActivityIndicator busy="{{ isSubmitting }}" class="mt-4" />
+        </StackLayout>
+    </ScrollView>
+</Page>

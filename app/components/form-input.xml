@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StackLayout xmlns="http://schemas.nativescript.org/tns.xsd">
+    <Label text="{{ label }}" class="text-sm font-medium text-gray-600 ml-2" />
+    <TextField 
+        text="{{ value }}" 
+        hint="{{ hint }}"
+        secure="{{ isSecure }}"
+        keyboardType="{{ keyboardType }}"
+        autocorrect="{{ autocorrect }}"
+        autocapitalizationType="{{ autocapitalizationType }}"
+        class="input" />
+</StackLayout>

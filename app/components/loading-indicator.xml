@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns="http://schemas.nativescript.org/tns.xsd">
+    <ActivityIndicator busy="true" class="m-4" />
+</GridLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Garage Door AI" class="bg-blue-600 text-white" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Welcome to Garage Door AI" class="text-2xl font-bold mb-4 text-center" />
+            
+            <!-- Quick Actions -->
+            <GridLayout columns="*, *" rows="auto" class="mb-4">
+                <Button text="Schedule Service" tap="{{ onScheduleService }}" 
+                    class="bg-blue-500 text-white p-4 m-2" col="0" />
+                <Button text="AI Diagnosis" tap="{{ onAIDiagnosis }}" 
+                    class="bg-green-500 text-white p-4 m-2" col="1" />
+            </GridLayout>
+
+            <!-- Maintenance Status -->
+            <Label text="Maintenance Status" class="text-xl font-bold mt-4 mb-2" />
+            <ListView items="{{ maintenanceItems }}" class="list-group mb-4" height="120">
+                <ListView.itemTemplate>
+                    <StackLayout class="list-group-item p-2">
+                        <Label text="{{ text }}" textWrap="true" class="text-base" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+
+            <!-- Recent Activity -->
+            <Label text="Recent Activity" class="text-xl font-bold mt-4 mb-2" />
+            <StackLayout class="bg-white p-4 rounded-lg">
+                <Label text="{{ lastActivityMessage }}" textWrap="true" class="text-base" />
+            </StackLayout>
+
+            <!-- Emergency Contact -->
+            <Button text="Emergency Service" tap="{{ onEmergencyService }}" 
+                class="bg-red-500 text-white p-4 mt-4" />
+        </StackLayout>
+    </ScrollView>
+</Page>

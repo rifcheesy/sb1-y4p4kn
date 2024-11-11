@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="AI Diagnosis" class="bg-blue-600 text-white">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+    
+    <StackLayout class="p-4">
+        <Label text="AI-Powered Diagnosis" class="text-xl font-bold mb-4" />
+        
+        <Button text="Take Photo" tap="{{ onTakePhoto }}" 
+            class="bg-blue-500 text-white p-4 mb-4" />
+        
+        <Image src="{{ currentImage }}" height="200" 
+            class="mb-4" visibility="{{ isImageVisible ? 'visible' : 'collapsed' }}" />
+        
+        <ActivityIndicator busy="{{ isAnalyzing }}" class="mb-4" />
+        
+        <StackLayout class="bg-gray-100 p-4 rounded-lg" 
+            visibility="{{ diagnosisResult ? 'visible' : 'collapsed' }}">
+            <Label text="Diagnosis Result:" class="font-bold mb-2" />
+            <Label text="{{ diagnosisResult }}" textWrap="true" />
+        </StackLayout>
+    </StackLayout>
+</Page>
